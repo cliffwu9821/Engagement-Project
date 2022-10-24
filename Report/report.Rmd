@@ -1,0 +1,52 @@
+---
+title: "Engagement Report"
+author: "Group 10"
+date: "`r Sys.Date()`"
+output: html_document
+params:
+  production: TRUE
+---
+
+```{r, set-chunk-opts, echo = FALSE, eval = params$production}
+library(knitr)
+opts_chunk$set(
+  echo = FALSE, warning = FALSE, message = FALSE
+)
+```
+
+# Introduction
+
+
+
+
+
+```{r, load-data}
+here::i_am("report/report.Rmd")
+data <- readRDS(
+  file = here::here("output/data_clean.rds")
+)
+```
+
+# List of videos
+
+## 5 most popular videos
+
+The table below shows the information of 5 most popular videos.
+
+```{r, table_one}
+both_tables <- readRDS(
+  file = here::here("output/both_tables.rds")
+)
+knitr::kable(both_tables$top, row.names = F, align = "lccc")
+```
+
+## 5 least popular videos
+
+The table below shows the information of 5 least popular videos.
+
+```{r, table_two}
+knitr::kable(both_tables$bottom, row.names = F, align = "lccc")
+```
+
+
+
