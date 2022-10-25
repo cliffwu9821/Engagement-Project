@@ -9,6 +9,6 @@
 - Generate table for analyzing the top and bottom 5 viewed videos
 - Saves the table as  `.rds` object in `output/` folder
 
-`code/make_figure.R`
+`Makefile`
 - Adding make command in cleaning the data and making the table
 - Make command that would generate the final report
