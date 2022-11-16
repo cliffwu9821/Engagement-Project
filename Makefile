@@ -8,7 +8,8 @@ table: code/01_make_table.R output/data_clean.rds
 	Rscript code/01_make_table.R
 
 
-
+install:
+	Rscript -e "renv::restore(prompt = FALSE)"
 
 .PHONY: clean	
 clean:
