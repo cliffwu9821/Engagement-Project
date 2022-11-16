@@ -1,4 +1,4 @@
-report.html: data/course_engagement.csv code/00_clean_data.R code/01_make_table.R
+report.html: data/course_engagement.csv clean_data table
 	Rscript Code/render_report.R
 
 clean_data: data/course_engagement.csv

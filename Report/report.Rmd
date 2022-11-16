@@ -12,6 +12,8 @@ library(knitr)
 opts_chunk$set(
   echo = FALSE, warning = FALSE, message = FALSE
 )
+library(config)
+config_list<-config::get()
 ```
 
 # Introduction
@@ -29,9 +31,9 @@ data <- readRDS(
 
 # List of videos
 
-## 5 most popular videos
+## `r config_list$parameter1` most popular videos
 
-The table below shows the information of 5 most popular videos.
+The table below shows the information of `r config_list$parameter1` most popular videos.
 
 ```{r, table_one}
 both_tables <- readRDS(
@@ -40,9 +42,9 @@ both_tables <- readRDS(
 knitr::kable(both_tables$top, row.names = F, align = "lccc")
 ```
 
-## 5 least popular videos
+## `r config_list$parameter2` least popular videos
 
-The table below shows the information of 5 least popular videos.
+The table below shows the information of `r config_list$parameter2` least popular videos.
 
 ```{r, table_two}
 knitr::kable(both_tables$bottom, row.names = F, align = "lccc")
